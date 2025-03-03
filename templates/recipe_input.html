@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Recipe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add Your Recipes, {{ name }}</h1>
+    <form action="/recipe_input?name={{ name }}" method="post">
+        <label>Recipe Name:</label>
+        <input type="text" name="recipe_name" required>
+        <label>Ingredients:</label>
+        <textarea name="ingredients" required></textarea>
+        <button type="submit">Add Recipe</button>
+    </form>
+    <a href="/recipe_plan?name={{ name }}">View Recipe Plan</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe Plan</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ name }}'s Recipe Plan</h1>
+    {% if recipes %}
+        <ul>
+        {% for recipe in recipes %}
+            <li><strong>{{ recipe.name }}</strong>: {{ recipe.ingredients }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recipes added yet. <a href="/recipe_input?name={{ name }}">Add Recipes</a></p>
+    {% endif %}
+</body>
+</html>

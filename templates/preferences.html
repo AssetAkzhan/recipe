@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recipe Preferences</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Hello, {{ name }}! Set Your Preferences</h1>
+    <form action="/save_preferences" method="post">
+        <input type="hidden" name="name" value="{{ name }}">
+        <label>Dietary Restrictions:</label>
+        <input type="text" name="dietary">
+        <label>Favorite Cuisine:</label>
+        <input type="text" name="cuisine">
+        <label>Number of Meals per Week:</label>
+        <input type="number" name="meals">
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
